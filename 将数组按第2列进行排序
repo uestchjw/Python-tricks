@@ -1,0 +1,8 @@
+from numpy import random
+# 实现将数组按第2列由小到大排列
+a = random.randint(0,10,size=(8,2))
+print(a)
+# np.argsort默认由小到大，返回index
+b = a[np.argsort(a[:,1]),:]
+print()
+print(b)
