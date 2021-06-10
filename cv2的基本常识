@@ -1,0 +1,18 @@
+
+import cv2
+
+# 要想让图片小一点的显示，2种方法
+
+cv2.namedWindow('a',0)
+cv2.resizeWindow('a',600,500)
+cv2.imshow('a',img)
+cv2.waitKey(0)
+
+
+# 或者在图像本身就缩小
+img = cv2.resize(img,(600,500))
+
+
+# 0是黑色，255是白色，好人还是多的
+img[0:100,:] = 0
+# 结果是图像上面100行变黑，证明和矩阵的格式是一样的
