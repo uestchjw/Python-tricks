@@ -1,0 +1,16 @@
+# 意味着在一个类class中，如果只定义动作，不执行，那么属性的值是不会变的
+class ff():
+    def __init__(self):
+        self.kk = 1
+    def pk(self):
+        self.kk += 1
+
+a = ff()
+print(a.kk)
+a.pk()
+print(a.kk)
+
+
+ 
+# 结果是 1  2  
+# 意味着在一个类class中，如果只定义动作，不执行，那么属性的值是不会变的
