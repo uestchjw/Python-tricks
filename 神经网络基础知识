@@ -10,6 +10,50 @@ optimizer 和 scheduler 的区别：
     scheduler = lr_scheduler.StepLR(optimizer, step_size=config.step_size, gamma=0.5) 
 
 
+
+
+
+
 权重衰减（也叫L2正则化)的作用？
   1.令w更小，根据奥卡姆剃刀原理，表示网络的复杂度更低，对数据的拟合更好，并且实际证明了L2正则化效果往往好于不正则化
   2.从数学角度，过拟合时，拟合函数的系数往往非常大，因为要考虑每个点，所以要变化非常快，所以导数要很大，所以系数很大
+
+
+
+
+
+
+
+
+
+SGD 和 Adam 优化器的区别：
+
+
+
+
+
+
+
+
+criterion = nn.CrossEntropyLoss() 交叉熵损失函数的计算方法？
+# criterion = LabelSmoothingCrossEntropy() 标签平滑
+
+
+
+
+
+
+
+softmax函数的计算方式？
+  softmax函数的作用就是将输出的各种各样的结果，转化为概率
+  我们都知道，概率值有2个基本条件：非负数、求和为1
+  所以：softmax计算第i类的概率
+    第一步：exp(input_i)
+    第二步：P(i) = exp(input_i)/exp求和
+  
+  对于二分类问题，最后的函数采用sigmold还是softmax是有区别的
+  1个值给到sigmold,2个值给到softmax
+  对于sigmold: output(x1) = 1/(1+exp(-x1))
+  对于softmax: output(x1) = exp(x1)/(exp(x1)+exp(x2))
+  对于CV，sigmold稍好一点；对于NLP，softmax稍好一点    某个博主的经验
+  
