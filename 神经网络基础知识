@@ -36,8 +36,11 @@ SGD 和 Adam 优化器的区别：
 
 
 criterion = nn.CrossEntropyLoss() 交叉熵损失函数的计算方法？
-# criterion = LabelSmoothingCrossEntropy() 标签平滑
+# criterion = LabelSmoothingCrossEntropy() 标签平滑，减小过拟合
 
+  交叉熵：比如 有3类：模型给出的概率分别是0.1 0.2 0.7; 真实的情况是ont hot 0 0 1; 那么损失函数L=-(0*log0.1+0*log0.2+1*log0.7)
+  labelsmoothing标签平滑：把one hot码进行了改变，增加了一个小量 如 0.05 0.05 0.9 
+    1.因为有的标注分类可能并不正确
 
 
 
