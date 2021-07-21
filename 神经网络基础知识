@@ -1,0 +1,4 @@
+
+optimizer 和 scheduler 的区别：
+  optimizer:其作用在于根据选用不同的优化器以及设置的lr、momentum等(超参数)对网络模型的参数进行更新，更新的方法是optimizer.step(),一般在每个batch后更新
+  scheduler:其作用在于对optimizer中的学习率进行更新、调整，更新的方法是scheduler.step()，一般在每个epoch后更新
