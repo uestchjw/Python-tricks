@@ -1,4 +1,15 @@
 
 optimizer 和 scheduler 的区别：
+
   optimizer:其作用在于根据选用不同的优化器以及设置的lr、momentum等(超参数)对网络模型的参数进行更新，更新的方法是optimizer.step(),一般在每个batch后更新
+  # 优化方式为mini-batch momentum-SGD，并采用L2正则化（权重衰减） momentum：动量 weight_decay=1e-2
+    optimizer = optim.SGD(model.parameters(), lr=config.LR,momentum=0.9, weight_decay=config.weight_decay)
+    
   scheduler:其作用在于对optimizer中的学习率进行更新、调整，更新的方法是scheduler.step()，一般在每个epoch后更新
+    例如：等间隔调整学习率 每过step_size个epoch,lr = lr*gamma   100轮训练，李寅龙将step_size设为12，初始学习率为0.005
+    scheduler = lr_scheduler.StepLR(optimizer, step_size=config.step_size, gamma=0.5) 
+
+
+权重衰减（也叫L2正则化)的作用？
+  1.令w更小，根据奥卡姆剃刀原理，表示网络的复杂度更低，对数据的拟合更好，并且实际证明了L2正则化效果往往好于不正则化
+  2.从数学角度，过拟合时，拟合函数的系数往往非常大，因为要考虑每个点，所以要变化非常快，所以导数要很大，所以系数很大
