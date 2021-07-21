@@ -28,7 +28,9 @@ optimizer 和 scheduler 的区别：
 
 
 SGD 和 Adam 优化器的区别：
-
+  Adam就是结合了一阶动量和二阶动量算法
+      optimizer = optim.SGD(model.parameters(), lr=config.LR,momentum=0.9, weight_decay=config.weight_decay)
+    # optimizer = optim.Adam(model.parameters(), lr=config.LR, betas=(0.9, 0.99),weight_decay=config.weight_decay)
 
 
 
@@ -72,6 +74,6 @@ softmax函数的计算方式？
   引入momentum后，v = mu*v-learning_rate*dw   
                  w = w+v 
                  其中v初始值为0，mu一般为0.9
-  可以这样理解上式：如果上次的momentum(v)与这次的负梯度方向是相同的，那这次下降的幅度就会加大，从而加速收敛
+  可以这样理解上式：如果上次的momentum(v)与这次的负梯度方向是相同的，那这次下降的幅度就会加大，从而加速收敛。类似惯性，小球下山，越滚越快，突然向上滚了，就会慢一些
 
   
