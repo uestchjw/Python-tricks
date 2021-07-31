@@ -1,0 +1,9 @@
+
+conda config --show channels          查看当前的软件源
+
+conda config --remove-key channels    移除其他的所有源，只剩下默认的软件源即defaults
+                                      有时候换完源依旧不能下载软件包，就执行这个，只保留默认软件源
+
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/  增加软件源 比如这是中科大源的网址
+
+
