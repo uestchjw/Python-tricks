@@ -1,24 +1,30 @@
+# 调用摄像头
+   cam = cv2.VideoCapture(0)
+   id,frame = cam.read()   # frame是读到的图片
+   
+# 运动模糊的问题
+  摄像头静止，拍摄我的头，而我的头在晃，那么得到img的背景不会模糊，人头会模糊
+   
 
-import cv2
+# 要想让图片小一点的显示，2种方法：
 
-# 要想让图片小一点的显示，2种方法
+  cv2.namedWindow('a',0)
+  cv2.resizeWindow('a',600,500)
+  cv2.imshow('a',img)
+  cv2.waitKey(0)
 
-cv2.namedWindow('a',0)
-cv2.resizeWindow('a',600,500)
-cv2.imshow('a',img)
-cv2.waitKey(0)
-
-
-# 或者在图像本身就缩小
-img = cv2.resize(img,(600,500))
+  或者在图像本身就缩小
+  img = cv2.resize(img,(600,500))
 
 
 # 0是黑色，255是白色，好人还是多的
-img[0:100,:] = 0
-# 结果是图像上面100行变黑，证明和矩阵的格式是一样的
+  img[0:100,:] = 0
+  # 结果是图像上面100行变黑，证明和矩阵的格式是一样的
 
 
 
 
-# cv2.imread 可以读入.jpeg的图片，但是路径绝对不可以是中文的
+# cv2.imread 可以读入.jpeg的图片，但是路径绝对不可以是中文的，路径中间可以有空格
+  cv2.imwrite('D:/Neural Network/hjw_test/SeiralShooting_pictures'+'/'+str(i)+'.jpg',img)
+    imwrite 保存图片时一定要有扩展名
 
