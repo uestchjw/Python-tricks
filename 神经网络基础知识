@@ -1,4 +1,9 @@
 
+延时函数:
+  time.sleep(5) 延时5s，但是不是很准确，如5.02s，在延时小单位时间要注意
+  time.time()  单位也是s
+
+
 optimizer 和 scheduler 的区别：
 
   optimizer:其作用在于根据选用不同的优化器以及设置的lr、momentum等(超参数)对网络模型的参数进行更新，更新的方法是optimizer.step(),一般在每个batch后更新
