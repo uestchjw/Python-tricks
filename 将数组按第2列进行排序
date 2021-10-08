@@ -13,12 +13,38 @@ print(b)
        查看字典中所有的键：b = a.keys()
 
 
-# 取出数组中符合条件的值，前提是Numpy
+
+
+
+
+# 循环的基本知识
+      
+      # for i in range(5,5): 这样不会执行语句
+      
+      # 无论正着还是反着，for循环都是到end的前一个停止
+         for i in range(5,-1,-1):
+             i = 5,4,3,2,1,0
+
+
+
+
+
+
+
+
+# 矩阵的基本知识
+
+     # 取出数组中符合条件的值，前提是Numpy
        a[a>0]
 
 
-# 判断数组是否含有（全是）某个值,前提是numpy
+     # 判断数组是否含有（全是）某个值,前提是numpy
       (a==2).any()    (a==2).all()
+      
+     # list的2个元素可以直接交换顺序
+        a[i],a[j] = a[j],a[i]
+        
+     # 
 
 
 
@@ -26,9 +52,9 @@ print(b)
 # 字符串的基本知识
 import string
 
-      转义字符(如\n）算作一个字符
+      # 转义字符(如\n）算作一个字符
 
-      将字符串按某个字符截断：
+      # 将字符串按某个字符截断：
       a='cherries bananas cherries -\ncherries\n? apples apples - bananas'
       b= a.split('\n')
       结果是：b = ['cherries bananas cherries -', 'cherries', '? apples apples - bananas']
@@ -40,7 +66,7 @@ import string
       在字符串中找到某个字符并返回下标：
       a.find('#')   若找不到，返回-1
       
-      去除末尾的空格 或者末尾的某个东西
+      # 去除末尾的空格 或者末尾的某个东西
       b = a.rstrip()     #()里面接那个东西
 
       
