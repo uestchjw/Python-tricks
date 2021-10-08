@@ -7,7 +7,15 @@ b = a[np.argsort(a[:,1]),:]
 print()
 print(b)
 
-# python只能 if    :
+
+
+
+# 不要忘了处理异常，即如果要求给定一定范围内的值，但给的值超出了范围
+
+
+
+
+# python只能 if:
              elif:    不能else if：
              else:
            
