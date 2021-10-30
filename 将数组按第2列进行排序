@@ -38,6 +38,9 @@ print(b)
 
 # 索引的基本知识
       
+      
+      # Matlab是step在冒号中间，python是step在最后
+      
       # for i in range(5,5): 这样不会执行语句
       
       # 无论正着还是反着，for循环都是到end的前一个停止
@@ -52,6 +55,9 @@ print(b)
 
 
 # 矩阵的基本知识
+
+     # 生成全为1的list,长度为4 
+         a = [1*4]*4
      # 改变数据类型
          kk = kk.astype(np.float)
      
