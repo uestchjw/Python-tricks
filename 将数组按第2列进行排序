@@ -58,6 +58,10 @@ print(b)
 
      # 生成全为1的list,长度为4 
          a = [1*4]*4
+         
+     # a.extend(b) 将b中的元素一个一个加进去
+     # a.appand(b) 将b作为整体加进去
+         
      # 改变数据类型
          kk = kk.astype(np.float)
      
