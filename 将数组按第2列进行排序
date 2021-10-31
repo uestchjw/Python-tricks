@@ -108,6 +108,7 @@ print(b)
          
      # a.extend(b) 将b中的元素一个一个加进去
      # a.appand(b) 将b作为整体加进去
+     # 注意，添加单个元素时，要a.append(5) 或 a += [5] 或 a.extend[5]  因为extend和+=都看作是两个list操作
          
      # 改变数据类型
          kk = kk.astype(np.float)
