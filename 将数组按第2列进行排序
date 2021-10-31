@@ -8,6 +8,46 @@ print()
 print(b)
 
 
+
+# list和numpy转换  
+      假设a是numpy型，b是list型
+      a.tolist()
+      c = np.array(b)
+
+
+
+# 找到list的最大值的下标
+      b = a.index(max(a))  注意：这样只会返回第一个发现的最大值的下标
+      
+      # 如何返回有多个最大值的下标？
+      a = [12,3,4,5,12]
+      b = [i for i,x in enumerate(a) if x==max(a)]
+      # 结果是b=[0,4]
+
+# 如何找到numpy的最大值和下标
+      一维numpy：np.argmax()，返回最大值的下标
+                 a = np.array([1,232,4,54])
+                 b = np.argmax(a)  # 结果是b=1
+                 
+                 如果有多个最大值呢？
+                 先变成list，再用上面list的方法
+                 
+      多维numpy，按行或列搜索最大值
+                 a = np.ones((3,4))
+                 a[0][1]=5
+                 a[1][3]=4
+                 a[2][2]=3
+                 b = np.argmax(a,axis=1)
+                 结果是：a = [[1. 5. 1. 1.]
+                              [1. 1. 1. 4.]
+                              [1. 1. 3. 1.]]
+                         b = [1 3 2]
+                 
+      
+      
+
+
+
 # 保存数组
   np.savetxt('aa.txt',numpy,fmt='%d') 按整数形式保存
 
