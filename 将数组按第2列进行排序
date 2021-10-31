@@ -57,6 +57,12 @@ print(b)
                        
 # 找到list中符合条件的所有元素的下标
       b = [i for i,x in enumerate(a) if x==5]
+  
+  接着如何从原矩阵中提取出符合条件的元素呢？ 注意不能直接a[b]这样会报错
+  c = []
+  for j in b:
+      c.append(a[j])
+  
 
 
 # 找到list的最大值的下标
