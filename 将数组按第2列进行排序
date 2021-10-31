@@ -7,6 +7,11 @@ b = a[np.argsort(a[:,1]),:]
 print()
 print(b)
 
+
+# python的乘除法是左优先
+      a = 1/2*3 # 结果是1.5
+
+
 # python创建复数
       a = complex(1,2) 
       # 结果是：a=1+2j
