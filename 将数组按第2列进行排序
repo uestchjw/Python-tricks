@@ -45,7 +45,7 @@ from numpy import random
 
 # list和numpy转换  
       假设a是numpy型，b是list型
-      a.tolist()
+      a = a.tolist()
       c = np.array(b)
       
 # 一个很大的问题是：人的思维是二维矩阵，Matlab格式为a[1:3,5]这样切片就取出来了一部分，在python中如何这样做呢？
