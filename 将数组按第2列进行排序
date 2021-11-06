@@ -1,11 +1,20 @@
 from numpy import random
 # 实现将数组按第2列由小到大排列
-a = random.randint(0,10,size=(8,2))
-print(a)
+    a = random.randint(0,10,size=(8,2))
+    print(a)
+    
 # np.argsort默认由小到大，返回index
-b = a[np.argsort(a[:,1]),:]
-print()
-print(b)
+    b = a[np.argsort(a[:,1]),:]
+    print()
+    print(b)
+
+
+# 如何在python中导入.mat文件
+    from scipy.io import loadmat
+    path = 'D:/Neural Network/Sun_liguo/Matlab/BW.mat'
+    a = loadmat(path) 
+    # 这样导入后，a是个字典，因为可能.mat文件中有多个变量，要想真正导入成numpy格式，还需要
+    a = a['BW']
 
 
 # 常见报错：
