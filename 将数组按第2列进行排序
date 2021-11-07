@@ -234,6 +234,9 @@ from numpy import random
 # 字符串的基本知识
 import string
 
+      # 字符串是不可变的数据类型
+         即a = '123'，不能a[1]='5'，只能a = a[0]+'5'+a[2]
+      
       # 字符串和数字的转换 int() str()
       
       # 字符串转置：
