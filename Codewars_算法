@@ -1,0 +1,87 @@
+
+
+# 初始点在[0,0],给定一个大小为[N,N]的maze，中间有的点是'W'wall，有的点可以过去是'.'，初始点[0,0]和终点[N-1,N-1]都是'.'，每次只能上下左右移动1格。
+  问：能否达到终点？True or False
+  
+  原始策略是：
+    1# point是当前点，curve保存走过的路径。
+    2# 每次先判断边界条件，即能否上下左右移动（不考虑wall）
+    3# 自定义搜索顺序：right->down->left->up 
+    4# 有3个判断条件：2#能否向那个方向移动+那个方向是否有wall+那个点是否已经在curve里面了 
+       如果都满足，那么就按照3#的顺序移动，更新point和curve，回到2#
+       如果哪个方向都走不了，就在maze中将当前point设为'W'wall，curve和point返回上次的值 curve=curve[:-1],point = curve[-1]
+    5# 如果最后point = [N-1,N-1] 就输出True
+       如果最后curve = []，就输出False
+  
+  # 这个版本的功能没问题，只可惜Timed out 了，说明效率不怎么样
+def path_finder(maze):
+    maze = maze.split('\n')
+    n = len(maze)
+    # 如果不加n == 1，将会有5 failed，果然，需要考虑极限条件
+    #
+    if n==1:
+        return True
+    # 如果n巨大，将会耗费很多算力，因此不能穷举法
+    # 他和检测curve那篇论文的算法有点像
+    # 注意到这条路线的长度并不是固定的
+    # 几个要素：实时删除
+    # 如果走到某一个点，发现无路可走了，那么就可以删除这个点了，并回退到上一个点
+    # 优先搜索的方向：假设我设为向右，向下优先搜索
+    # 还要考虑边界条件
+    point = [0,0]
+    curve = [point]
+    flag = 0
+    while flag!=1 and flag!=-1:
+        # 首先判断4个方向还能不能走了,只是判断边界条件，还不涉及到wall的事情
+        if point[1]<n-1: # 还能向右走
+            dir_r = [point[0],point[1]+1]
+        else:
+            dir_r = None
+        if point[1]>0: # 还能向左走
+            dir_l = [point[0],point[1]-1]
+        else:
+            dir_l = None
+        if point[0]<n-1: # 还能向下走
+            dir_d = [point[0]+1,point[1]]
+        else:
+            dir_d = None
+        if point[0]>0: # 还能向上走
+            dir_u = [point[0]-1,point[1]]
+        else:
+            dir_u = None
+        
+        # 自定义优先级：right->down->left->up
+        # 判断3个条件：可以向那个方向走（不在边界）、那里不是wall、之前的curve没有这个点
+        if dir_r != None and not dir_r in curve and maze[dir_r[0]][dir_r[1]]!='W':
+            point = dir_r
+            curve.append(point)
+        elif dir_d != None and not dir_d in curve and maze[dir_d[0]][dir_d[1]]!='W':
+            point = dir_d
+            curve.append(point)
+        elif dir_l != None and not dir_l in curve and maze[dir_l[0]][dir_l[1]]!='W':
+            point = dir_l
+            curve.append(point)
+        elif dir_u != None and not dir_u in curve and maze[dir_u[0]][dir_u[1]]!='W':
+            point = dir_u
+            curve.append(point)
+        else:
+            # maze[point[0]][point[1]] = 'W'
+            if point[1]<n-1:
+                maze[point[0]] = maze[point[0]][:point[1]]+'W'+maze[point[0]][point[1]+1:]
+            else:
+                maze[point[0]] = maze[point[0]][:point[1]]+'W'
+            curve = curve[:-1]
+            if curve == []:
+                point = []
+            else:
+                point = curve[-1]
+            
+        if point == [n-1,n-1]:
+            flag = 1
+        if point == []:
+            flag = -1
+
+    if flag == 1:
+        return True
+    else:
+        return False
