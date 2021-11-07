@@ -85,3 +85,99 @@ def path_finder(maze):
         return True
     else:
         return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# codewars: from kata: human readable duration format
+def format_duration(seconds):
+
+    if seconds == 0:
+        return 'now'
+    else:
+        threshold = [365*24*3600,24*3600,3600,60]
+        names = ['year','day','hour','minute','second']
+        res = [0,0,0,0,0]
+        for i in range(len(threshold)):
+            rule = threshold[i]
+            if seconds < rule:
+                continue
+            elif seconds == rule:
+                res[i] = 1
+                seconds = 0
+                break
+            else:
+                res[i] = math.floor(seconds/rule)             
+                seconds = seconds % rule
+        res[4] = seconds
+        pin = ''
+        b = [i for i,x in enumerate(res) if x!=0]
+        print(b,len(b))
+        if len(b)==1: # only 1 unit of time
+            pin = str(res[b[0]])+' '+names[b[0]]
+            print(pin)
+            if res[b[0]]>1:
+                pin += 's'
+            return pin
+            
+        # 有个逗号，还有个and的问题:需要准确判断什么时候加comma 和 and
+        
+        elif len(b)==2: # has 2 units of time
+            pin = str(res[b[0]])+' '+names[b[0]]
+            if res[b[0]]>1:
+                pin += 's'
+            pin += ' and '+str(res[b[1]])+' '+names[b[1]]
+            if res[b[1]]>1:
+                pin += 's'
+            return pin
+        
+        else: # at least 3 units of time
+            for i in range(len(b)):
+                pin += str(res[b[i]])+' '+names[b[i]]
+                if res[b[i]]>1:
+                    pin += 's'
+                if i == len(b)-1:
+                    return pin
+                elif i == len(b)-2:
+                    pin += ' and '
+                else:
+                    pin += ', '
