@@ -193,6 +193,10 @@ from numpy import random
         # 那么b的shape是(2,2）
         
         总之，不确定的时候就np.reshape()一下
+        
+   # numpy的拼接
+       np.vstack()   # v=vertical 垂直
+       np.hstack()   # h=horizontal 水平
 
 
 
