@@ -9,7 +9,9 @@ from numpy import random
 # 关于画图
     import matplotlib.pyplot as plt
     
-    # 注意：numpy中坐标原点在左上角，(x,y),x是上下的距离，y是左右的距离；在plt.plot 和plt.quiver画箭头时要注意，可以认为原点在左上角，(x,y),x是左右的距离，y是上下的距离
+    # 注意：numpy中坐标原点在左上角，(x,y),x是上下的距离，y是左右的距离；
+            在plt.plot 和plt.quiver画箭头时要注意，可以认为原点在左上角，(x,y),x是左右的距离，y是上下的距离
+            其实画图坐标系是这样的：横轴（x轴），原点0在左边；纵轴（y轴），原点0在上面
     
     plt.subplot(121)
     plt.imshow(a,cmap='gray')   # 灰度图显示
