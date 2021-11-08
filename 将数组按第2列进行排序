@@ -197,6 +197,10 @@ from numpy import random
    # numpy的拼接
        np.vstack()   # v=vertical 垂直
        np.hstack()   # h=horizontal 水平
+       
+   # 查看和改变numpy的数据类型
+       a.dtype
+       a = a.astype('float32')
 
 
 
