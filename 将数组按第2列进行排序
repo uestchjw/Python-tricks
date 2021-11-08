@@ -15,7 +15,10 @@ from numpy import random
     plt.imshow(a,cmap='gray')   # 灰度图显示
     
     plt.show()
-
+    
+    
+    # 画箭头
+    plt.quiver(x,y,rx,ry,color='',scale=100)  注意：scale越大，箭头长度越小 x,y是在哪一点绘制箭头，rx,ry是箭头的方向
 
 # 实现将数组按第2列由小到大排列
     a = random.randint(0,10,size=(8,2))
