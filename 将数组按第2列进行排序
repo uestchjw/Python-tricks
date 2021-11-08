@@ -179,7 +179,31 @@ from numpy import random
 
 
 
-# 矩阵的基本知识
+
+
+# numpy的基本知识
+
+    # 关注numpy的shape
+        a = [1,2]
+        b = np.array(a)
+        # 其实b的shape是(2,),并不是(1,2) b=[1 2]
+        
+        a = [[1,2],[3,4]]
+        b = np.array(a)
+        # 那么b的shape是(2,2）
+        
+        总之，不确定的时候就np.reshape()一下
+
+
+
+
+
+
+
+
+
+
+# list的基本知识
 
      # 生成全为1的list,长度为4 
          a = [1*4]*4
