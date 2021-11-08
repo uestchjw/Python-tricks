@@ -27,10 +27,16 @@ from numpy import random
     a = a['BW']
 
 
+
+
+
 # 常见报错：
        keyerror 0 : 原因是索引的键值在字典中不存在
        RuntimeWarning: Mean of empty slice
        RuntimeWarning: invalid value encountered in double_scalars ：原因是出现了分母为0，但是没有报错，解决办法是判断一下分母=0
+       Backend Qt5Agg is interactive backend. Turning interactive mode on：原因是 plt.imshow(I1,cmap='gray') 后面没有加plt.show(),所以显示不了图像
+       
+       
        
 
 # 不要忘了处理异常，即如果要求给定一定范围内的值，但给的值超出了范围
