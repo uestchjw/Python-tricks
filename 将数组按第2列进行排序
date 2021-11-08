@@ -5,6 +5,18 @@
 
 
 from numpy import random
+
+# 关于画图
+    import matplotlib.pyplot as plt
+    
+    # 注意：plt中，坐标原点在左下角，而numpy中坐标原点在左上角，在plt.plot 和plt.quiver画箭头时要注意
+    
+    plt.subplot(121)
+    plt.imshow(a,cmap='gray')   # 灰度图显示
+    
+    plt.show()
+
+
 # 实现将数组按第2列由小到大排列
     a = random.randint(0,10,size=(8,2))
     print(a)
