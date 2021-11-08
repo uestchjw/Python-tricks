@@ -1,3 +1,9 @@
+
+
+真的感觉自己python基础好差啊，很多基本的操作都不会，正好趁这个机会加强一下
+
+
+
 from numpy import random
 # 实现将数组按第2列由小到大排列
     a = random.randint(0,10,size=(8,2))
@@ -95,6 +101,10 @@ from numpy import random
   for j in b:
       c.append(a[j])
   
+  
+  
+  
+  
 
 
 # 找到list的最大值的下标
@@ -143,7 +153,37 @@ from numpy import random
 # python只能 if:
              elif:    不能else if：
              else:
-           
+             
+             
+             
+ 
+ 
+ 
+             
+# 弧度和角度的转换
+    math.degrees() 转角度
+    math.radians() 转弧度
+    by the way， 对于二范数计算有个专门的函数 c = math.hypot(a,b) 效果是 c = sqrt(a**2+b**2)
+# 对于三角函数
+    sin,cos,tan都只能作用于1个数，不能是list，也不能是numpy
+    sin(a)是计算弧度a的正弦值
+    
+    
+    对于numpy使用三角函数：
+        np有自己的三角函数
+        a = np.array([1,2,3,4])
+        b = np.sin(a)
+        
+    对于list使用三角函数：
+        for i in range(len(a)):
+            a[i] = sin(a[i])
+
+
+
+
+
+
+
 
 
 
