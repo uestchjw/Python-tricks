@@ -6,8 +6,41 @@
 
 
 
-# 关于边缘检测，图像梯度，各类滤波算子
+# 关于边缘检测，图像梯度，各类算子
    
+   # 对于边缘检测：检测边缘前，需要高斯滤波消除噪声，因此导数对噪声很敏感
+                                              Canny方法和Sobel方法的区别
+                                              Canny方法得到的是较为连续的轮廓，并且只有0和255，即是轮廓和不是轮廓
+                                              Sobel方法得到的连续性不是很好，并且由于Sobel算子得到的梯度值没有截断，因此不只有0和255
+
+                                              canny = cv2.Canny(Img,low_threshold,high_threshold)   一般high是low的2-3倍
+
+
+
+                                              edges = cv2.Sobel(Img,cv2.CV_16S,1,1)  # 这种同时上下左右梯度的，最后的轮廓有点暗
+                                              edges = cv2.convertScaleAbs(edges)     # 要转换成0-255区间的灰度值，即uint8数据格式
+                                              plt.imshow(edges)
+
+
+                                              x = cv2.Sobel(visible_gray,cv2.CV_16S,1,0)    # 这种x，y方向分开检测再合并的，结果比较亮
+                                              y = cv2.Sobel(visible_gray,cv2.CV_16S,0,1)
+                                              absx = cv2.convertScaleAbs(x)
+                                              absy = cv2.convertScaleAbs(y)
+                                              dst = cv2.addWeighted(absx,0.5,absy,0.5,0)    # 0是gamma，加权的常数项
+                                              
+  # 对于各类算子： Sobel算子 Gx = [-1 0 1         Gy = [-1 -2 -1       梯度值 = Gx*A 和 Gy*A 的二范数，梯度方向 = arctan(Gy/Gx)
+                                  -2 0 2                0  0  0
+                                  -1 0 1]               1  2  1]
+                   Prewitt算子： Gx = [-1 0 1     Gy = [-1 -1 -1
+                                       -1 0 1            0  0  0
+                                       -1 0 1]           1  1  1]
+                   Roberts算子： Gx = [-1 0       Gy = [0 -1            Roberts算子对正负45度的边缘提取效果较好
+                                       0 1 ]            1  0]
+                                       
+                   Laplacian算子： 二阶微分算子，分为四邻域和八邻域的    很少用于边缘检测，多是锐化操作
+                                    H = [ 0 -1 0               H = [-1 -1 -1
+                                          -1 4 -1                   -1  8 -1
+                                          0 -1 0]                   -1 -1 -1]
 
 
 
