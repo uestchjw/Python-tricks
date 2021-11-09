@@ -268,12 +268,20 @@ from numpy import random
        b = np.flipud(a)  将numpy上下翻转
    
    
-   
+   # 对角元素
+       a = np.diag(np.array([3,4,5])) 以3,4,5为对角的对角阵
+       如果a已经是一个多维矩阵，那么取出对角元素也很简单： 
+       b = np.diag(a)
    
    # 查看和改变numpy的数据类型
        a.dtype
        a = a.astype('float32')
-
+       
+       
+   # 查找numpy中符合条件的元素的下标
+       b = np.where(a>0)
+       # b是一个tuple 如b[0] = [1,2,3] ,b[1] = [4,5,6]
+       
 
    # 判断numpy是否含有（全是）某个值
       (a==2).any()    (a==2).all()
