@@ -26,6 +26,9 @@ from numpy import random
     # 画箭头
     plt.quiver(x,y,rx,ry,color='',scale=100)  注意：scale越小，箭头长度越长 x,y是在哪一点绘制箭头，rx,ry是箭头的方向，rx,ry的大小也会影响箭头的长度
 
+
+
+
 # 实现将数组按第2列由小到大排列
     a = random.randint(0,10,size=(8,2))
     print(a)
@@ -36,9 +39,12 @@ from numpy import random
     print(b)
 
 
+
 # 对于命名问题：
     变量，自定义函数，命名一定要清楚，绝对不要和系统自带函数名相近，有一次调了一周就是这个原因
     格外注意vscode提供的补全功能，很可能没注意，补得就是另一个相似的变量或函数，有一次调了15分钟时这个原因
+
+
 
 
 # 如何在python中导入.mat文件
@@ -263,6 +269,10 @@ from numpy import random
         # 那么b的shape是(2,2）
         
         总之，不确定的时候就np.reshape()一下
+   
+   # numpy展开成一维的
+        b = a.flatten() # 这样操作后，a的shape不变
+   
         
    # numpy的拼接
        np.vstack()   # v=vertical 垂直
