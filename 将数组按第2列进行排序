@@ -263,6 +263,13 @@ from numpy import random
        np.hstack()   # h=horizontal 水平
        可以一次拼接>2个numpy
        
+   # numpy的翻转
+       b = np.fliplr(a)  将numpy左右翻转
+       b = np.flipud(a)  将numpy上下翻转
+   
+   
+   
+   
    # 查看和改变numpy的数据类型
        a.dtype
        a = a.astype('float32')
