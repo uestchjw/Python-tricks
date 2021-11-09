@@ -296,7 +296,10 @@ from numpy import random
        
    # 查找numpy中符合条件的元素的下标
        b = np.where(a>0)
-       # b是一个tuple 如b[0] = [1,2,3] ,b[1] = [4,5,6]
+       # b是一个tuple 如b[0] = [1,2,3] ,b[1] = [4,5,6]，意思是a[1,4],a[2,5],a[3,6]满足条件
+       
+       b = a>0                      # 返回一个和a大小一致的numpy，每个元素是True或者False
+       b = (a>0).astype('int')      # 返回一个和a大小一致的numpy，是1或者0
        
 
    # 判断numpy是否含有（全是）某个值
