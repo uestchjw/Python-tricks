@@ -143,6 +143,8 @@ from numpy import random
       b = [i for i,x in enumerate(a) if x==max(a)]
       # 结果是b=[0,4]
 
+
+
 # 如何找到numpy的最大值和下标
       一维numpy：np.argmax()，返回最大值的下标
                  a = np.array([1,232,4,54])
@@ -314,14 +316,21 @@ from numpy import random
         # for i in canny:
         #     num += 1
         # print(num)    # 这样num还等于800
-        
-        
+                
         
         num = 0
         for i in np.nditer(canny):
             num += 1
         print(num)
         # 480000
+        
+        
+   # numpy排序
+        b = np.sort(a,-1)  # 按行升序排序
+        b = np.sort(a,0)   # 按列升序排序
+        
+        c = np.argsort(a,-1)  # 按行输出从小到大的index
+        c = np.argsort(a,0)   # 按列输出从小到大的index
 
         
         
