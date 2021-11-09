@@ -268,7 +268,37 @@ from numpy import random
        a = a.astype('float32')
 
 
+   # 判断numpy是否含有（全是）某个值
+      (a==2).any()    (a==2).all()
+      
+      
+      
+      
+   # 访问numpy中每一个元素：for x in np.nditer(canny):
+   
+        # print(canny.shape) 
+        # (800,600)
+        # num = 0
+        # for i,x in enumerate(canny):
+        #     num += 1
+        # 这样num = 800
+        
+        
+        # num = 0
+        # for i in canny:
+        #     num += 1
+        # print(num)    # 这样num还等于800
+        
+        
+        
+        num = 0
+        for i in np.nditer(canny):
+            num += 1
+        print(num)
+        # 480000
 
+        
+        
 
 
 
@@ -306,8 +336,7 @@ from numpy import random
        a[0]：是int型
        a[0:1]:是list型
 
-     # 判断数组是否含有（全是）某个值,前提是numpy
-      (a==2).any()    (a==2).all()
+
       
      # list的2个元素可以直接交换顺序
         a[i],a[j] = a[j],a[i]
