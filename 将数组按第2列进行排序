@@ -3,6 +3,10 @@
 真的感觉自己python基础好差啊，很多基本的操作都不会，正好趁这个机会加强一下
 
 
+在MATLAB中，atan(0/0)不存在，atan(5/0) = pi/2，atan(-5/0) = -pi/2
+这点和python不一样，在复现的时候可能出错，要重点关注一下
+
+
 
 from numpy import random
 
