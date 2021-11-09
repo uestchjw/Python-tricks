@@ -12,7 +12,9 @@
                                               Canny方法和Sobel方法的区别
                                               Canny方法得到的是较为连续的轮廓，并且只有0和255，即是轮廓和不是轮廓
                                               Sobel方法得到的连续性不是很好，并且由于Sobel算子得到的梯度值没有截断，因此不只有0和255
-
+                                              canny方法原理：比如之前先是用Sobel算子提取梯度+非极大值抑制，将非极大值的点置为0，最后用上下2个阈值再提取一波，大于high的变成255，
+                                                            小于low的变成0，low和high之间的，看看旁边有无255，考虑连接
+                                              
                                               canny = cv2.Canny(Img,low_threshold,high_threshold)   一般high是low的2-3倍
 
 
