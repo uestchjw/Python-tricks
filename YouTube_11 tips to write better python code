@@ -79,7 +79,7 @@
          # my_counter是所有的元素和他们出现的次数
          most_common = my_counter.most_common(1)  # 最常见的元素
          # [(9,6)]
-         most_common[0][0] # 哪个元素出现最多，出现最多的次数
+         most_common[0] # 哪个元素出现最多，出现最多的次数
          
          
          
