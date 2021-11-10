@@ -23,8 +23,17 @@
             
             
             
+3# Sort complex iterables with sorted
+
+    e.g. a = [1,5,4,2,3]
+         b = sorted(a)             # 默认是升序
+         c = sorted(a,reverse=True)
             
             
+         a = [{'name':hjw,'age' = 21}, {'name':swq, 'age' = 32}]
+         b = sorted(a,key = lambda x : x['age'])
+         # 结果就是按照age升序排列的
+         
             
             
             
@@ -75,5 +84,48 @@
          
          
          
+    
+8# Format strings with f-Strings  for python 3.6+
+    
+    可以快速链接num和string
+    
+    e.g. i = 10 
+         b = f' I love her for {i} years'
+         print(b) 
+         # I love her for 10 years
+    
+    
+    
+    
+    
+    
+9# concat string with .join
+
+    e.g. list_of_strings = ['hello','my','friend']
+         my_string = ' '.join(list_of_strings)
+         # 'hello my friend'
          
          
+         
+         
+         
+10# merge two dictionaries with {** x, ** y} for python 3.5+
+
+    e.g. d1 = {'name':hjw,'age':21}
+         d2 = {'name':hjw, 'hobby': football}
+         
+         merged_dict = {**d1,**d2}
+         # {'name':hjw,'age':21,'hobby': football}
+
+
+
+
+
+
+11# simplify if statement for multiple checks
+
+    e.g.                                                  replaced by : colors = ['red','green']                  
+         if c == 'red' or c == 'green':                                 if c in colors:
+            flag = 1                                                        flag = 1
+
+
