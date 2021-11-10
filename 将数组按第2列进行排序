@@ -271,7 +271,8 @@ from numpy import random
         总之，不确定的时候就np.reshape()一下
    
    # numpy展开成一维的
-        b = a.flatten() # 这样操作后，a的shape不变
+        b = a.flatten()     # 这样操作后，a的shape不变，这样是按行展开
+        b = a.flatten('F')  # 这样是按列展开
    
         
    # numpy的拼接
