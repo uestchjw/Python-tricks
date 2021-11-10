@@ -1,0 +1,79 @@
+
+
+1# 多使用enumerate,而不是range(len)
+
+    e.g. a = [1,2,3,4]                                  replaced by : a = [1,2,3,4]
+         for i in range(len(a)):                                      for idx,num in enumerate(a):
+            if a[i]<0:                                                    if num<0:
+                a[i]=0                                                        a[idx] = 0
+                
+                
+                
+                
+                
+                
+                
+                
+                
+2# Use list comprehensions instead of for raw loops
+
+    e.g. a = []                                         replaced by : a = []
+        for i in range(10):                                           a = [i*i for i in range(10)]
+            a.append(i*i)
+            
+            
+            
+            
+            
+            
+            
+            
+4# Store unique values with Sets
+
+    意思是set只会保存不相同的值
+    
+    e.g. a = [1,2,3,4,5,6,6,6]  
+         b = set(a)
+         # b={1,2,3,4,5,6}  
+         
+         
+
+
+
+5# Save Memory with Generators
+
+    意思是可以大大节约内存
+    
+    e.g. a = [i for i in range(10000)]                  replaced by : a = (i for i in range(10000))
+         print(sum(a))                                                print(sum(a)) 
+                                                                      # type(a) = generator
+          
+         
+         
+
+6# Define default values in Dictionaries with .get() and .setdefault()
+
+    e.g. a = {'ball':football,'price':10}               replaced by : a =  {'ball':football,'price':10}
+         b = a['num'] # 会报错                                        b = a.get('num')) # 返回None
+         
+         
+         
+         
+7# Count hashable objects with collections.Counter
+
+    e.g. from collections import Counter
+         a = [10,10,10,5,5,2,9,9,9,9,9,9]
+         my_counter = Counter(a)
+         
+         
+         # hashable ： 可散列的，list和一维numpy，不包括多维numpy
+         # my_counter是所有的元素和他们出现的次数
+         most_common = my_counter.most_common(1)  # 最常见的元素
+         # [(9,6)]
+         most_common[0][0] # 哪个元素出现最多，出现最多的次数
+         
+         
+         
+         
+         
+         
