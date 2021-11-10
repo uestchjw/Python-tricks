@@ -3,12 +3,24 @@
 真的感觉自己python基础好差啊，很多基本的操作都不会，正好趁这个机会加强一下
 
 
-在MATLAB中，atan(0/0)不存在，atan(5/0) = pi/2，atan(-5/0) = -pi/2
-这点和python不一样，在复现的时候可能出错，要重点关注一下
+# 关于MATLAB和python的不同点
+    1# 在MATLAB中，atan(0/0)不存在，atan(5/0) = pi/2，atan(-5/0) = -pi/2
+    这点和python不一样，在复现的时候可能出错，要重点关注一下
 
-matlab中，parfor是多线并行的意思，但是不能打断点，需要把parfor改成for即可
+    2# MATLAB中，parfor是多线并行的意思，但是不能打断点，需要把parfor改成for即可
+    3# MATLAB中，默认是列优先，即展开的时候是先列，后行；对应python a.flatten('F')
+    
+    4# MATLAB中，a是多维矩阵，a[1]是一个数；python中a是多维numpy，a[1]是一个vector
+
 
 from numpy import random
+
+
+# 关于数据格式
+    1# 只要涉及除法，那么就是float格式，在下标索引时要注意变成int
+        a = 4/2 
+        # a = 2.0
+
 
 # 关于画图
     import matplotlib.pyplot as plt
