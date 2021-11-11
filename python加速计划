@@ -12,7 +12,7 @@ python虽然代码量要少，但是运行速度并不快，因此，对python�
                     用conda安装会出现错误：could not load shared object file llvmlite.dll
                     
                     
-   # 如何使用numba
+   # 如何使用numba： jit装饰
    
                     在大运算量时效果很好；运算量较小时，不仅不快，还要慢一点
    
