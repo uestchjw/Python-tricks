@@ -20,4 +20,5 @@ python虽然代码量要少，但是运行速度并不快，因此，对python�
                     def fun():                                                 @jit(nopython = True)
                     fun()                                                      def fun():
                                                                                fun()
-                     
+   
+   # numba只适用于数组运算，对于canny检测，conv卷积等操作，他不能转换为机器代码
