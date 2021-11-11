@@ -5,7 +5,11 @@ python虽然代码量要少，但是运行速度并不快，因此，对python�
 
 
 
-1# numba加速
+1# 日常小的优化
+
+
+
+2# numba加速
 
    # 如何安装numba: pip install llvm    ->     pip install llvmlite       ->        pip install numba 
                     
