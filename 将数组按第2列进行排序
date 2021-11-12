@@ -70,7 +70,11 @@ from numpy import random
     plt.quiver(x,y,rx,ry,color='',scale=100)  注意：scale越小，箭头长度越长 x,y是在哪一点绘制箭头，rx,ry是箭头的方向，rx,ry的大小也会影响箭头的长度
     
     
-    # 画匹配点对
+    # 画匹配点对（直线）
+    p1是第一张图的feature point,p2是第2张图的feature point,并且已经转置了，适合于画图坐标系
+    plt.plot(  [p1[:,0],p2[:,0]+leng] , [p1[:,1],p2[:,1]] , color = 'y')
+    
+    即连接两点a，b成一条直线的逻辑是，plt.plot([ax,bx],[ay,by])
     把两个矩阵拼接起来，勾出feature point，再用plot连线即可
 
 
