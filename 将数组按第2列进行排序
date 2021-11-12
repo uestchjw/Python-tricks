@@ -305,7 +305,11 @@ from numpy import random
 
 
 # numpy的基本知识
-
+    # 保存和加载numpy
+        a = np.ones((3,4))
+        np.savetxt('D:/Neural Network/Sun_liguo/hhhhh.txt',a)   # 保存
+        b = np.loadtxt('D:/Neural Network/Sun_liguo/hhhhh.txt') # 默认加载的是float数据类型
+        
     # 关注numpy的shape
         a = [1,2]
         b = np.array(a)
@@ -321,6 +325,11 @@ from numpy import random
         a = np.zeros((3,4))
         b = a.size 
         # b = 20，如果b=0,那么a就是空矩阵
+        
+        
+   # 删除numpy某些行或列
+        b = np.delete(a,[1,2],axis=0)  # 删除行
+        b = np.delete(a,[1,2],axis=1)  # 删除列
    
    # numpy展开成一维的
         b = a.flatten()     # 这样操作后，a的shape不变，这样是按行展开
