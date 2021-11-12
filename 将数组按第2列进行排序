@@ -53,6 +53,13 @@ from numpy import random
         # a = 2.0
 
 
+# 关于统计不同区间内元素的个数
+    1# groupby：貌似不是那么符合
+    2# pandas的value_counts()
+
+
+
+
 # 关于画图
     import matplotlib.pyplot as plt
     
