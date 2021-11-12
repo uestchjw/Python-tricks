@@ -68,6 +68,10 @@ from numpy import random
     
     # 画箭头
     plt.quiver(x,y,rx,ry,color='',scale=100)  注意：scale越小，箭头长度越长 x,y是在哪一点绘制箭头，rx,ry是箭头的方向，rx,ry的大小也会影响箭头的长度
+    
+    
+    # 画匹配点对
+    把两个矩阵拼接起来，勾出feature point，再用plot连线即可
 
 
 
