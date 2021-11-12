@@ -3,6 +3,33 @@
 真的感觉自己python基础好差啊，很多基本的操作都不会，正好趁这个机会加强一下
 
 
+
+
+
+
+
+# 关于异常：
+    可以主动抛出异常，结束代码 raise
+    
+    e.g. 如果图像配准的点对数少于2，那么就不运行
+         a = 1
+         if a<2:
+            raise Exception('NONONO') # 或者raise ValueError('NONONOaaaaa')都可以
+            
+   
+   
+   try:
+       fun1()         
+   except:
+       fun2()
+
+
+
+
+
+
+
+
 # 关于MATLAB和python的不同点
     1# 在MATLAB中，atan(0/0)不存在，atan(5/0) = pi/2，atan(-5/0) = -pi/2
     这点和python不一样，在复现的时候可能出错，要重点关注一下
