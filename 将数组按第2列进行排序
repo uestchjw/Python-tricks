@@ -418,7 +418,23 @@ from numpy import random
         b = np.linalg.norm(a,ord=2,axis = 0)   # 列向量2范数
         b = np.linalg.norm(a,ord=2,axis = None)   # 矩阵范数
         # 默认是ord=2，即二范数
-      
+        # linear algebra -> linalg
+   
+   # numpy生成随机数
+        from numpy import random
+        
+        1# 生成随机整数 
+            random.randint(low,high,size)   # 生成[low,high)内的整数
+        
+        2# 生成[0,1)之间的浮点数
+            random.random(size)
+        
+        3# 生成给定范围内不重复的数
+        
+            random.choice(a,size,replace)
+            # a是区间，可以是一个numpy，也可以是个数n 即np.arange(0,n)
+            # replace设为False时，生成的数不重复
+             
       
    # 访问numpy中每一个元素：for x in np.nditer(canny):
    
