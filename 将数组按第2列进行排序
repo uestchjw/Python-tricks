@@ -35,6 +35,7 @@
 
 
 # 关于MATLAB和python的不同点
+
     1# 在MATLAB中，atan(0/0)不存在，atan(5/0) = pi/2，atan(-5/0) = -pi/2
     这点和python不一样，在复现的时候可能出错，要重点关注一下
 
@@ -402,7 +403,7 @@ from numpy import random
        
    # 查找numpy同时满足2个条件的元素的下标
         b = (a>3) * (a<4)           # True 和 False 也可以做乘法
-        c = np.where(b==1)
+        c = np.where(b==1)          # c 是一个tuple
        
 
    # 判断numpy是否含有（全是）某个值
@@ -419,6 +420,7 @@ from numpy import random
         b = np.linalg.norm(a,ord=2,axis = None)   # 矩阵范数
         # 默认是ord=2，即二范数
         # linear algebra -> linalg
+        # math.hypot(a,b) -> sqrt(a**2+b**2)
    
    # numpy生成随机数
         from numpy import random
