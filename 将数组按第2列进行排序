@@ -53,9 +53,7 @@ from numpy import random
         # a = 2.0
 
 
-# 关于统计不同区间内元素的个数
-    1# groupby：貌似不是那么符合
-    2# pandas的value_counts()
+
 
 
 
@@ -352,6 +350,11 @@ from numpy import random
         b = np.exp(a)
         b = np.floor(a)
    
+   
+   # numpy的逆矩阵
+        b = np.linalg.inv(a)
+   
+   
         
    # numpy的拼接
        np.vstack()   # v=vertical 垂直
@@ -429,6 +432,21 @@ from numpy import random
         
         c = np.argsort(a,-1)  # 按行输出从小到大的index
         c = np.argsort(a,0)   # 按列输出从小到大的index
+  
+  
+  
+  
+   # 关于统计numpy不同区间内元素的个数
+   
+        1# groupby：貌似不是那么符合
+        2# pandas的value_counts()
+     
+        3#   b = np.histogram(a,bins=[0,5,10])
+             # 那么返回的b是一个Numpy，包含[0,5),[5,10]区间内元素的个数
+             # bins可以是一个list，numpy，也可以是一个int，那样会分成int个区间进行统计
+             
+             
+   
 
         
         
