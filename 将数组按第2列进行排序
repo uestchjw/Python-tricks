@@ -241,8 +241,6 @@ from numpy import random
 
 
 
-# python 两个数组对应元素相乘：*   a=np.arange(1,31) b=np.arange(1,31)   a*b
-         两个矩阵点乘：a.dot(b)  要求矩阵内维相同，即a的列数=b的行数
 
 
 # python只能 if:
@@ -415,8 +413,6 @@ from numpy import random
        a[a>0] 
     
       
-   # 改变numpy中元素的数据类型
-        kk = kk.astype(np.float)   
       
       
       
