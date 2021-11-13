@@ -413,7 +413,11 @@ from numpy import random
        a[a>0] 
     
       
-      
+   # numpy范数计算
+        b = np.linalg.norm(a,ord=2,axis = 1)   # 行向量2范数
+        b = np.linalg.norm(a,ord=2,axis = 0)   # 列向量2范数
+        b = np.linalg.norm(a,ord=2,axis = None)   # 矩阵范数
+        # 默认是ord=2，即二范数
       
       
    # 访问numpy中每一个元素：for x in np.nditer(canny):
