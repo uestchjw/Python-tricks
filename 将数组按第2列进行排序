@@ -42,6 +42,9 @@
     3# MATLAB中，默认是列优先，即展开的时候是先列，后行；对应python a.flatten('F')
     
     4# MATLAB中，a是多维矩阵，a[1]是一个数；python中a是多维numpy，a[1]是一个vector
+    
+    5# MATLAB中，矩阵数学意义相乘是*，     对应元素相乘是.*
+       python中，矩阵数学意义乘是np.dot(), 对应元素相乘是 *
 
 
 from numpy import random
