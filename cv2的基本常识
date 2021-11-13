@@ -15,7 +15,25 @@
     # 注意：给dtype时候，是在画图坐标系下的，即原点在左上角，向右为x轴正方向，向下为y轴正方向，如(200,500)，那么就是左右长200，上下长500
     
 
-
+# 对于图像rotate
+    
+    有2种方法旋转：
+    
+     1# 简单的: imutils
+        
+        import imutils
+        b = imutils.rotate(a,45)               # 逆时针旋转45度，这样旋转后的图像大小不变，因此会损失部分边缘
+        b = imutils.rotate_bound(a,45)         # 顺时针旋转45度，这样旋转后，图像变大，原图像都会被保存下来
+        
+        
+     2# 较复杂的：cv2
+     
+        import cv2
+        c1,c2 = a.shape[0] //2,a.shape[1]//2   # 图像中心，也是旋转中心
+        M = cv2.getRotationMatrix2D((c1,c2),45,1) # M是旋转矩阵，逆时针旋转45度，最后的1是说和原图像大小一样
+        k = cv2.warpAffine(a,M,a.shape)        
+        
+        
 
 
 # 关于边缘检测，图像梯度，各类算子
