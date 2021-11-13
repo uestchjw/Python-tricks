@@ -314,6 +314,7 @@ from numpy import random
 
 
 # numpy的基本知识
+
     # 保存和加载numpy
         a = np.ones((3,4))
         np.savetxt('D:/Neural Network/Sun_liguo/hhhhh.txt',a)   # 保存
@@ -354,7 +355,9 @@ from numpy import random
    # numpy的逆矩阵
         b = np.linalg.inv(a)
    
-   
+   # numpy矩阵乘法
+         # 数学意义上的矩阵相乘（即内维相同） np.dot()
+         # 对应元素相乘:直接乘                       *
         
    # numpy的拼接
        np.vstack()   # v=vertical 垂直
