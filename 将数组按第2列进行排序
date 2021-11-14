@@ -368,8 +368,8 @@ from numpy import random
         b = np.linalg.inv(a)
    
    # numpy矩阵乘法
-         # 数学意义上的矩阵相乘（即内维相同） np.dot()
-         # 对应元素相乘:直接乘                       *
+         # 数学意义上的矩阵相乘（即内维相同） np.dot()  注意： 1x3 3x4相乘，最后返回的是(1,4)，即标准格式的
+         # 对应元素相乘:直接乘 *
         
    # numpy的拼接
        np.vstack()   # v=vertical 垂直
