@@ -55,6 +55,8 @@ from numpy import random
     1# 只要涉及除法，那么就是float格式，在下标索引时要注意变成int
         a = 4/2 
         # a = 2.0
+        
+    2# a = np.ones() np.zeros()  格式默认是float64，这样做下标就不行
 
 
 
@@ -391,7 +393,7 @@ from numpy import random
        b = np.diag(a)
    
    # 查看和改变numpy的数据类型
-       a.dtype
+       a.dtype    # np.ones() np.zeros() 默认是float64格式
        a = a.astype('float32')
        
        
