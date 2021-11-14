@@ -79,6 +79,7 @@ from numpy import random
     plt.quiver(x,y,rx,ry,color='',scale=100)  注意：scale越小，箭头长度越长 x,y是在哪一点绘制箭头，rx,ry是箭头的方向，rx,ry的大小也会影响箭头的长度
         # 在不进行plt.imshow(I1)时，直接画： x,y,rx,ry都是以左下角为原点，向右向上为正方向的，Matlab和python都是
         # 一旦进行plt.imshow(I1),那么x,y 就是左上角为原点，向右x正方向，向下y正方向，但是rx,ry还是以左下角为原点，向右x正，向上y正的。
+        # 而在Matlab中，imshow(I1)后，x,y 就是左上角为原点，向右x正方向，向下y正方向，并且rx,ry也遵从这个坐标系
     
     
     # 画匹配点对（直线）
