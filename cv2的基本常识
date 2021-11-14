@@ -33,7 +33,10 @@
         M = cv2.getRotationMatrix2D((c1,c2),45,1) # M是旋转矩阵，逆时针旋转45度，最后的1是说和原图像大小一样
         k = cv2.warpAffine(a,M,a.shape)        
         
-        
+# 对于仿射变换
+
+    # M = cv2.getAffineTransform(a,b)   注意：a,b必须是float32，对应CV_32F格式，3行2列的numpy
+    
 
 
 # 关于边缘检测，图像梯度，各类算子
