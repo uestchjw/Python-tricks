@@ -382,6 +382,9 @@ from numpy import random
        np.dstack()   # d = depth   深度拼接
        可以一次拼接>2个numpy
        
+       warning！！ 矩阵拼接前，最好reshape一下，要不维度会乱：血的教训
+       比如np.hstack(  ( a[:,0], a[:,2])  ) ，得到的结果并不是n行2列的，需要先reshape成(-1,1)再stack
+       
    # numpy的翻转
        b = np.fliplr(a)  将numpy左右翻转
        b = np.flipud(a)  将numpy上下翻转
