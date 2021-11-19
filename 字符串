@@ -1,0 +1,38 @@
+
+# 字符串的基本知识
+import string
+
+      # 字符串是不可变的数据类型
+         即a = '123'，不能a[1]='5'，只能a = a[0]+'5'+a[2]
+      
+      # 字符串和数字的转换 int() str()
+          # int(-12) = -12,即负号也可以转过来
+      
+      # 字符串转置：
+          a = a[::-1]
+      
+      # 将字符串转成list  
+          a='123' b= list(a)  b = ['1','2','3']
+      
+      # 转义字符(如\n）算作一个字符
+
+      # 将字符串按某个字符截断：
+      a='cherries bananas cherries -\ncherries\n? apples apples - bananas'
+      b= a.split('\n')
+      结果是：b = ['cherries bananas cherries -', 'cherries', '? apples apples - bananas']
+
+      a = '#67 hj'
+      按'#'截断，那么结果是 ['','67 hj']
+
+
+      在字符串中找到某个字符并返回下标：
+      a.find('#')   若找不到，返回-1
+      
+      # 去除末尾的空格 或者末尾的某个东西
+      b = a.rstrip()     #()里面接那个东西
+
+      
+      用特定的连接符号连接字符串：
+      a=['12', '34', '56']
+      '+'.join(a)
+      结果是：'12+34+56'
