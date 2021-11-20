@@ -37,7 +37,13 @@
 
     # M = cv2.getAffineTransform(a,b)   注意：a,b必须是float32，对应CV_32F格式，3行2列的numpy
     
+# 对于投影变换（>=4个点）：
 
+    # attmat,mask = cv2.findhamography(a,b,cv2.RANSAC,5.0)
+    
+    
+    
+    
 
 # 关于边缘检测，图像梯度，各类算子
    
