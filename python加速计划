@@ -6,7 +6,8 @@ python虽然代码量要少，但是运行速度并不快，因此，对python�
 
 
 1# 日常小的优化
-
+   
+   很多个and判断，转换为很多个or条件，continue，else 再进行操作
 
 
 2# numba加速
