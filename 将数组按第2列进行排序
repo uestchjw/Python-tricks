@@ -128,6 +128,7 @@ from numpy import random
        RuntimeWarning: Mean of empty slice
        RuntimeWarning: invalid value encountered in double_scalars ：原因是出现了分母为0，但是没有报错，解决办法是判断一下分母=0
        Backend Qt5Agg is interactive backend. Turning interactive mode on：原因是 plt.imshow(I1,cmap='gray') 后面没有加plt.show(),所以显示不了图像
+       error: (-215:Assertion failed) _src.depth() == CV_8U in function 'cv::Canny'  ：原因是传入canny的必须是CV_8U格式，即np.astype('uint8')
        
        
        
