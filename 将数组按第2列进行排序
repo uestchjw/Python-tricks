@@ -246,19 +246,10 @@ from numpy import random
 
 
 
-
-
-
-
 # python只能 if:
              elif:    不能else if：
              else:
-             
-             
-             
- 
- 
- 
+                                   
              
 # 弧度和角度的转换
     math.degrees() 转角度
@@ -285,13 +276,10 @@ from numpy import random
 
 
 
-
-
 # 字典的基本操作
        a= {'egg':45,'oil':60}
        取出键对应的值：    a['egg']
        查看字典中所有的键：b = a.keys()
-
 
 
 
@@ -313,7 +301,6 @@ from numpy import random
       # 如何切片包含最后一个或第一个值呢？ a = [1,2,3,4]
             b = a[2:]     # b= [3,4]
             b = a[2::-1]  # b= [3,2,1] 注意:这里不能写成 a[2:-1:-1]那样结果会是[]
-
 
 
 
@@ -352,7 +339,10 @@ from numpy import random
    # numpy展开成一维的
         b = a.flatten()     # 这样操作后，a的shape不变，这样是按行展开
         b = a.flatten('F')  # 这样是按列展开
+        # 返回后shape=(8,)，不是标准格式，要小心
         
+        注意：a.ravel()展开效果是一样的，但flatten返回是拷贝，不影响原来的值，ravel有风险影响原值
+        因此：以后展开都用flatten
         
         
    # 关于索引numpy行或列的问题
