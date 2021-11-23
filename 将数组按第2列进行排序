@@ -202,7 +202,10 @@ from numpy import random
       c.append(a[j])
   
   
-  
+# 移除list中的元素
+    按元素值：a.remove('2')
+    按索引值：a.pop(1)    # a.pop()默认删除最后一个元素
+    注意：不要写a = a.remove()，
   
   
 
