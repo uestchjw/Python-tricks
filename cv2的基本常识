@@ -6,6 +6,7 @@
 
 # 展示图片效果不对
     很可能是数据格式的问题，cv2.imshow()和plt.imshow()，都需要uint8格式的，
+    因为cv2.imread读进来就是uint8格式的
 
 
 
