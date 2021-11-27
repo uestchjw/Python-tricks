@@ -19,6 +19,11 @@
     # 注意dtype是必须的，如果不想用，就给None
     # 注意：给dtype时候，是在画图坐标系下的，即原点在左上角，向右为x轴正方向，向下为y轴正方向，如(200,500)，那么就是左右长200，上下长500
     
+    
+    超分辨SR的差值方法：BiCubic Interpolation 可以通过cv2.resize()函数实现
+    img = cv2.resize(img,None,fx = 3,fy = 3,interpolation=cv2.INTER_CUBIC) 
+    # 实现了分辨率*3
+    
 
 # 对于图像rotate
     
