@@ -20,7 +20,11 @@
          if a<2:
             raise Exception('NONONO') # 或者raise ValueError('NONONOaaaaa')都可以
             
-   
+# 关于断言：
+    assert a>1
+    xxx
+    
+    # 只有满足a>1时，才会继续执行，否则报错
    
    try:
        fun1()         
@@ -57,6 +61,12 @@ from numpy import random
         # a = 2.0
         
     2# a = np.ones() np.zeros()  格式默认是float64，这样做下标就不行
+    
+    
+    
+    3# 字符串转为数字时，有时要用float
+        a = '0.4'
+        b = float(a) # b=int(a)会报错
 
 
 
