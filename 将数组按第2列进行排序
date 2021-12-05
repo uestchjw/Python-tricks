@@ -355,7 +355,10 @@ from numpy import random
         a = np.zeros((3,4))
         b = a.size 
         # b = 20，如果b=0,那么a就是空矩阵
-        
+   
+   # 数组的某些地方赋一个常数，可以直接
+        a[0,:] = 1
+   
         
    # 删除numpy某些行或列
         b = np.delete(a,[1,2],axis=0)  # 删除行
