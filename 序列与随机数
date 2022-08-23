@@ -1,0 +1,23 @@
+
+import random
+import numpy as np
+
+# 生成序列：
+  a = np.arange(low,high,step) # step默认为1
+  a = np.linspace(start,stop,num)
+
+# 生成单个随机数：
+  0-1之间的小数：a = random.random()
+  指定范围内的随机整数：a = random.randint(x,y)  # 可以取到y
+  指定范围内的随机小数: a = random.uniform(x,y)
+  
+
+# 生成随机序列或矩阵：
+   # size是1个则生成序列，size是2个则生成矩阵
+   a = np.random.random(size) 
+   a = np.random.randint(low,high,size)  # 可能会生成重复的
+   a = np.random.uniform(low,high,size)
+   
+   
+# 在序列中取出随机n个数：
+  b = np.random.choice(a,n,replace=False)  # replace为False时，取出的值将不会重复
