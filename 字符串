@@ -2,6 +2,8 @@
 # 字符串的基本知识
 import string
 
+参考资料：https://www.yangshuaibin.com/detail/392306
+
       # 字符串是不可变的数据类型
          即a = '123'，不能a[1]='5'，只能a = a[0]+'5'+a[2]
       
@@ -16,24 +18,35 @@ import string
       
       # 转义字符(如\n）算作一个字符
 
-      # 将字符串按某个字符截断：
+      # 将字符串按某个字符截断： split是截断的意思
             a='cherries bananas cherries -\ncherries\n? apples apples - bananas'
             b= a.split('\n')
             结果是：b = ['cherries bananas cherries -', 'cherries', '? apples apples - bananas']
 
             a = '#67 hj'
             按'#'截断，那么结果是 ['','67 hj']
-
+            
+      # 统计字符串中元素'xx'出现次数：
+            a.count('xx')
 
       # 在字符串中找到某个字符并返回下标：
             a.find('#')   若找不到，返回-1
       
-      # 统计字符串中共有多少个'xx'出现：
+      # 从右侧开始找：
+            a = 'hjw hjw'
+            c = a.rfind('jw')
+            print(c) # 5
             
+      # 找到元素'xx'出现的所有位置的下标：
+            
+      # 去除左右的空格：strip是剥夺的意思
+            b = a.strip()
       
       # 去除末尾的空格 或者末尾的某个东西：
             b = a.rstrip()     #()里面接那个东西
-
+      
+      # 去除左侧的空格：
+            b = a.lstrip()                     
       
       # 用特定的连接符号连接字符串：
             a=['12', '34', '56']
