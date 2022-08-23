@@ -1,0 +1,17 @@
+
+
+参考资料：https://blog.csdn.net/sxingming/article/details/51922776
+
+# 添加、删除元素
+  a.add(x)
+  a.remove(x)
+
+# 交运算：
+  c = a & b
+# 并运算：
+  c = a | b
+# 补运算：
+  c = a - b
+  c = b - a
+# 对称差集：取出a和b中不属于a&b的所有部分
+  c = a ^ b
