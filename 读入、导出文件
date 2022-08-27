@@ -27,7 +27,6 @@
     常用：
     pp = [data.iloc[i,:].values for i in range(data.shape[0])]  data.shape[0]从数据开始，不会算上表头的那一行
       
- 
     # 写入
     import pandas
     path = r'C:\Users\Lenovo\Desktop\a.xlsx'
@@ -41,9 +40,43 @@
     # 读取
     import scipy.io
     data = scipy.io.loadmat(path)['A']
-    
-    
+        
     # 写入
     import scipy.io
     result = [[1,2,3],[4.5,6.5,2],[6,4,2.3]]
     scipy.io.savemat(path,{'A':result})   # 保存为字典格式：使用时用A索引
+    
+    
+    
+# .csv
+    import numpy as np
+    data_path = r'D:\毕业设计\数据采集平台\Time_Sequences\01-23-16-36-47_.csv'
+    data = np.loadtxt(data_path,dtype=float,delimiter = ',')
+    # 需要加delimiter = ','    因为中间有逗号   
+
+
+# .yaml
+    # 读取
+    import yaml
+    with open(path,'r') as f:
+        data = yaml.load(f,Loader=yaml.FullLoader)  # 注意：BaseLoader读出来时str类型，所以一般用FullLoader
+        
+    # 写入
+    import yaml
+    a = {'name':'hjw','year':24,'hobby':'soccer','data':{'a':1.2,'b':3.2}}
+    with open(path,'w') as f:
+        yaml.dump(a,stream=f)
+
+
+# .npy和.npz  
+    .npy文件就是np.save()之后产生的
+    .npz文件是多个numpy保存到一起  '''
+    a = np.array([1,2,3,4,5])
+    b = np.array([6,7,8,9,10])
+    np.savez(r'D:\hjw.npz',n1=a,n2=b)   # 修改名称为n1,n2
+    np.savez_compressed()   # 用法一样，只是耗时更长，有了压缩
+
+    c = np.load(r'D:\hjw.npz')
+    print(c.files) # ['n1', 'n2']
+    print(c['n1']) # [1 2 3 4 5]
+    print(c['n2']) # [ 6  7  8  9 10]
