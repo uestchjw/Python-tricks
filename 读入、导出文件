@@ -14,16 +14,34 @@
   np.savetxt(path,result,'%s')
   
 
+
+
+# .xlsx
+    # 读取
+    data = pandas.read_excel(path,sheet_name='P_D',header=None)  # header=None对应的是纯数据，无表头，正常有表头    
+    有表头时读取某一列
+    a = data.iloc[:,0].values      # iloc用序号索引列  常用
+    a = data.loc[:,'num'].values   # loc是用str索引列
+    读取某一行
+    c = data.iloc[0,:].values # header无论是啥，读取的都是数据的第一行，不会出现表头的那一行
+    常用：
+    pp = [data.iloc[i,:].values for i in range(data.shape[0])]  data.shape[0]从数据开始，不会算上表头的那一行
+      
+ 
+    # 写入
+    import pandas
+    path = r'C:\Users\Lenovo\Desktop\a.xlsx'
+    data = [['a',15],['b',23.4],['c',45]]
+    df = pandas.DataFrame(data,columns=['alp','num'])  # columns指定每一列的名称
+    df.to_excel(path,sheet_name='a',index=False)       # index=False，就会左紧邻，不会有额外的序号占一列
+
+
+
 # .mat
     # 读取
     import scipy.io
     data = scipy.io.loadmat(path)['A']
     
-    注：若不知道用什么索引，可直接data = scipy.io.loadmat(path)
-    {'__header__': b'MATLAB 5.0 MAT-file Platform: nt, Created on: Sat Aug 27 09:31:02 2022', '__version__': '1.0', '__globals__': [], 'A': array([[1. , 2. , 3. ],
-       [4.5, 6.5, 2. ],
-       [6. , 4. , 2.3]])}
-    然后看到有'A'，再data = scipy.io.loadmat(path)['A']
     
     # 写入
     import scipy.io
