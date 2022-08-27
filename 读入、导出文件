@@ -1,0 +1,31 @@
+
+# 编程涉及到的文件类型有：
+# .txt,  .xlsx,  .mat,  .csv,  .yaml,  .npy,  .npz
+
+
+# .txt
+  # 读取
+  path = r'C:\Users\Lenovo\Desktop\a.txt'
+  with open(path,'r') as f:
+      data = f.read().splitlines()  # 去除换行符号\n
+      
+  # 写入
+  result = [['a',1.5,2],['b',1.7,3],['c',9.3,4]]
+  np.savetxt(path,result,'%s')
+  
+
+# .mat
+    # 读取
+    import scipy.io
+    data = scipy.io.loadmat(path)['A']
+    
+    注：若不知道用什么索引，可直接data = scipy.io.loadmat(path)
+    {'__header__': b'MATLAB 5.0 MAT-file Platform: nt, Created on: Sat Aug 27 09:31:02 2022', '__version__': '1.0', '__globals__': [], 'A': array([[1. , 2. , 3. ],
+       [4.5, 6.5, 2. ],
+       [6. , 4. , 2.3]])}
+    然后看到有'A'，再data = scipy.io.loadmat(path)['A']
+    
+    # 写入
+    import scipy.io
+    result = [[1,2,3],[4.5,6.5,2],[6,4,2.3]]
+    scipy.io.savemat(path,{'A':result})   # 保存为字典格式：使用时用A索引
