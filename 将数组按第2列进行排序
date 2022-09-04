@@ -119,10 +119,7 @@ from numpy import random
       b = np.angle(a) # 这样结果是弧度制
       b = b*180/pi    # 这样结果是角度制
   
-# list和numpy转换  
-      假设a是numpy型，b是list型
-      a = a.tolist()
-      c = np.array(b)
+
       
 # 一个很大的问题是：人的思维是二维矩阵，Matlab格式为a[1:3,5]这样切片就取出来了一部分，在python中如何这样做呢？
   个人建议：把list型转换成numpy型
@@ -154,32 +151,6 @@ from numpy import random
             d = c[1:3,:]
             # 结果是：[[2 7]
                        [3 8]]          
-                                             
-                       
-# 找到list中符合条件的所有元素的下标
-      b = [i for i,x in enumerate(a) if x==5]
-  
-  接着如何从原矩阵中提取出符合条件的元素呢？ 注意不能直接a[b]这样会报错
-  c = []
-  for j in b:
-      c.append(a[j])
-  
-  
-# 移除list中的元素
-    按元素值：a.remove('2')
-    按索引值：a.pop(1)    # a.pop()默认删除最后一个元素
-    注意：不要写a = a.remove()，
-  
-  
-
-
-# 找到list的最大值的下标
-      b = a.index(max(a))  注意：这样只会返回第一个发现的最大值的下标
-      
-      # 如何返回有多个最大值的下标？
-      a = [12,3,4,5,12]
-      b = [i for i,x in enumerate(a) if x==max(a)]
-      # 结果是b=[0,4]
 
 
 
