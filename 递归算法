@@ -1,0 +1,90 @@
+# 递归：程序调用自身
+# 将一个大型复杂问题层层转化为一个与原问题相似的规模较小的问题
+
+" 1. 阶乘问题 "
+# 给定整数n, 求n的阶乘  
+def factorial(n):
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+
+" 2. Fibonacci序列问题 "
+# 假设小兔子一个月长成大兔子，大兔子每一个月生一个小兔子，
+# 第1个月有1只小兔子，不考虑兔子的寿命，问n个月后有多少只兔子？
+def Fibonacci_1(n):
+    if n < 2:
+        return 1
+    else:
+        return Fibonacci_1(n-1) + Fibonacci_1(n-2)
+# 这样对F(n-1),F(n-2)存在大量重复计算
+# 本质上，Fibonacci_1是逆推法
+# 而实际上，正推比较节约资源
+def Fibonacci_2(n):
+    def forward(i,n,x,y): # 算到了第i个月，最终要算到n月，F(n-2),F(n-1)
+        if i <= n :
+            return forward(i+1,n,y,x+y)
+        else:
+            return y
+    if n < 2:
+        return 1
+    else:
+        return forward(2,n,1,1)
+
+
+" 3. Hanoi问题 "
+# X,Y,Z是三个塔座，开始时有n个盘子依其半径大小套在X上，并且半径大的在下面。
+# 现要将X上的圆盘移到Z上，并按照同样顺序叠置。
+# 移动规则：①每次只能移动1个圆盘②anytime不允许将半径大的压在半径小的圆盘上面
+
+
+# 在list前面插入元素： a.insert(index,obj)   删除元素：a.pop(index)
+# 参数传递时，如何让子函数改变时原参数也变？反之又如何做？
+# 根据需要，选择对应的变量；将字符串转为变量名： eval
+# a_1 = 1
+# a_2 = 2
+# k = 2
+# c = eval(f'a_{k}')
+# print(c)
+def Hanoi_1(n,X,Y,Z):
+
+    def move(X,Z):
+        print(f' Move from {X} to {Z}')
+    if n == 1:
+        move(X,Z)
+    else:
+        Hanoi_1(n-1,X,Z,Y)
+        move(X,Z)
+        Hanoi_1(n-1,Y,X,Z)
+
+
+class Hanoi_2():
+    def __init__(self,n,X,Y,Z) -> None:
+        import numpy as np
+        self.X_ring = list(np.arange(1,n+1))
+        self.Y_ring = []
+        self.Z_ring = []
+        self.total_num = 0
+        print(f"The original status is:  X:{self.X_ring}\tY:{self.Y_ring}\tZ:{self.Z_ring}\n\n")
+    def move(self,a,b,a_ring,b_ring):
+        print(f'Move {a_ring[0]} from {a} to {b}')
+        b_ring.insert(0,a_ring[0])
+        a_ring.pop(0)
+        self.total_num += 1
+        print(f'The current status is:  X:{self.X_ring}\tY:{self.Y_ring}\tZ:{self.Z_ring}')
+    def action(self,n,X,Y,Z):
+        if n == 1:
+            self.move(X,Z,eval(f'self.{X}_ring'),eval(f'self.{Z}_ring'))
+        else:
+            self.action(n-1,X,Z,Y)
+            self.move(X,Z,eval(f'self.{X}_ring'),eval(f'self.{Z}_ring'))
+            self.action(n-1,Y,X,Z)
+    def cal(self):
+        print(f'The total num of moving is:{self.total_num} ')
+
+num = 4
+a = Hanoi_2(num,'X','Y','Z')
+a.action(num,'X','Y','Z')
+a.cal()
+
