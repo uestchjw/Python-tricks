@@ -12,6 +12,11 @@ import string
       
       # 字符串转置：
           a = a[::-1]
+          
+      # 拼接：
+          a = 'hjw'
+          b = 'lyx'
+          c = a + b
       
       # 将字符串转成list  
           a='123' b= list(a)  b = ['1','2','3']
