@@ -1,37 +1,52 @@
 # list的基本操作
 
      # 生成全为1的list,长度为4 
-         a = [1*4]*4
+         a = [1]*4
      
      # 添加元素
-        a.extend(b) 将b中的元素一个一个加进去
-        a.appand(b) 将b作为整体加进去
-        注意，添加单个元素时，要a.append(5) 或 a += [5] 或 a.extend[5]  因为extend和+=都看作是两个list操作
+         a.extend(b) 将b中的元素一个一个加进去
+         a.appand(b) 将b作为整体加进去
+         注意，添加单个元素时，要a.append(5) 或 a += [5] 或 a.extend[5]  因为extend和+=都看作是两个list操作   
          
-     
+     # 删除元素
+         按元素值：a.remove('2')
+         按索引值：a.pop(1)    # a.pop()默认删除最后一个元素
+         注意：不要写a = a.remove()
+         
      # 拼接
          2个矩阵可以直接+号拼接 c = a+b
          a矩阵拼接1个值b： a.append(b)
          1个值a拼接矩阵b： [a]+b
      
-     
      # 排序：
          a.sort() 返回值是None
-     
-     
-     
+         
+     # list和numpy转换  
+          假设a是numpy型，b是list型
+          a = a.tolist()
+          c = np.array(b)       
+          
+     # 找到list中符合条件的第一个元素的下标       
+          b = a.index(max(b))
+                       
+     # 找到list中符合条件的所有元素的下标
+          b = [i for i,x in enumerate(a) if x==5]
+  
+
+
+    接着如何从原矩阵中提取出符合条件的元素呢？ 注意不能直接a[b]这样会报错
+  c = []
+  for j in b:
+      c.append(a[j])
+
        
      # a = [1,2,3]
        a[0]：是int型
        a[0:1]:是list型
-
-
       
      # list的2个元素可以直接交换顺序
         a[i],a[j] = a[j],a[i]
-        
-        
-        
+                        
      # 关于copy和是否会改变原矩阵值的思考
          不确定的时候，最好先.copy()一下
          
