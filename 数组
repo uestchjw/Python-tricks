@@ -9,10 +9,12 @@
          注意，添加单个元素时，要a.append(5) 或 a += [5] 或 a.extend[5]  因为extend和+=都看作是两个list操作   
          
      # 删除元素
-         按元素值：a.remove('2')
-         按索引值：a.pop(1)    # a.pop()默认删除最后一个元素
-         注意：不要写a = a.remove()
-         
+         按索引值：a.pop(1)       # a.pop()默认删除最后一个元素
+         按元素值：a.remove('2')  # 只会删除第一个找到的元素
+         删除所有符合条件的元素：
+         while x in a:
+             a.remove(x)
+       
      # 拼接
          2个矩阵可以直接+号拼接 c = a+b
          a矩阵拼接1个值b： a.append(b)
