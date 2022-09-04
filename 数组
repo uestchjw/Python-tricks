@@ -21,33 +21,43 @@
          1个值a拼接矩阵b： [a]+b
      
      # 排序：
-         a.sort() 返回值是None
-         
+         a.sort()             # 升序
+         a.sort(reverse=True) # 降序
+         数组中存储二维数据时，按照第2个元素大小排序
+         a = [(8,2),(1,2),(3,4),(5,1)]
+         def aa(A):
+             return A[1]
+         a.sort(key=aa)
+         # out： [(5, 1), (8, 2), (1, 2), (3, 4)]
+   
      # list和numpy转换  
-          假设a是numpy型，b是list型
-          a = a.tolist()
-          c = np.array(b)       
-          
-     # 找到list中符合条件的第一个元素的下标       
-          b = a.index(max(b))
-                       
-     # 找到list中符合条件的所有元素的下标
-          b = [i for i,x in enumerate(a) if x==5]
+         a = a.tolist()
+         c = np.array(b)       
+     
+     # 搜索
+         # 第一个元素下标       
+              b = a.index(max(b))                 
+         # 所有元素下标
+              b = [i for i,x in enumerate(a) if x==5]
+     
+     # 累加累乘
+         b = sum(a)
+         c = 1
+         for i in a:
+             c *= i
   
-
-
-    接着如何从原矩阵中提取出符合条件的元素呢？ 注意不能直接a[b]这样会报错
-  c = []
-  for j in b:
-      c.append(a[j])
+     # 提取特定序列的元素
+        a = [1,2,3,4]
+        b = [1,3]
+        c = [a[i] for i in b]
 
        
      # a = [1,2,3]
-       a[0]：是int型
-       a[0:1]:是list型
+         a[0]：是int型
+         a[0:1]:是list型
       
      # list的2个元素可以直接交换顺序
-        a[i],a[j] = a[j],a[i]
+         a[i],a[j] = a[j],a[i]
                         
      # 关于copy和是否会改变原矩阵值的思考
          不确定的时候，最好先.copy()一下
