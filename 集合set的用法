@@ -15,3 +15,17 @@
   c = b - a
 # 对称差集：取出a和b中不属于a&b的所有部分
   c = a ^ b
+
+
+    # 我可以借用字典吗，用键值来当set集合
+    # 现在问题是：a完整数据[[x1,y1],[x2,y2]]，b={y1} 想找到a中符合条件的b
+    # a = [ ['x1','y1'],['x2','y2'],['x3','y3']]
+    # b = ['y1']
+    # aa = {}
+    # for i in a:
+    #     aa.update({i[1]:i[0]})
+    # print(aa)
+    # need = set(aa.keys()).difference(set(b))
+    # print(need)
+    # data = [[aa[mm],mm] for mm in need]
+    # print(data)
